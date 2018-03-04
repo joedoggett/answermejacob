@@ -42,6 +42,7 @@ public class SecurityInterceptor implements java.io.Serializable
         Object[] parameters = joinPoint.getArgs();
         Right right = (Right) parameters[0];
 
+
         NoncePass noncePass = nonceService.validateNonce(right.getSecurity().getNonce(), right.getSecurity().getUserName());
 
         //assure validation of incoming material.
